@@ -1,5 +1,4 @@
-package Pages;
-
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -33,6 +32,9 @@ public abstract class BasePage {
     }
 
     public void waitForElementDisplayed(By locator){
+        wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+    }
+    public void waitForElementClickable(By locator){
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
 

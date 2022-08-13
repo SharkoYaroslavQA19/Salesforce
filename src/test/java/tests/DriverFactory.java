@@ -1,4 +1,4 @@
-package Test;
+package tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -13,19 +13,21 @@ public class DriverFactory {
         if (browserName.equals("chrome")) {
             WebDriverManager.chromedriver().setup();
             ChromeOptions options = new ChromeOptions();
-            // options.addArguments("--headless");
             options.addArguments("--ignore-certificate-errors");
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-notifications");
             driver = new ChromeDriver(options);
-        } else if (browserName.equals("safari")) {
+        }
+        else if (browserName.equals("safari")) {
             WebDriverManager.safaridriver().setup();
             driver = new SafariDriver();
-        } else if (browserName.equals("firefox")) {
+        }
+        else if (browserName.equals("firefox")) {
             WebDriverManager.firefoxdriver().setup();
             driver = new FirefoxDriver();
-        } else {
-            throw new Exception("Undefined browser type");
+        }
+        else {
+            throw new Exception("Undefined Browser Type");
         }
         return driver;
     }
