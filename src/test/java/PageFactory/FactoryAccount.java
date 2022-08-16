@@ -8,7 +8,7 @@ import models.Account;
 public class FactoryAccount {
     private static final Faker faker = new Faker();
 
-    public static Account AccountWithAllData() {
+    public static Account accountWithAllData() {
         return Account.builder().accountName(faker.name().username())
                 .phone(faker.phoneNumber().phoneNumber())
                 .fax(faker.phoneNumber().phoneNumber())
@@ -31,7 +31,7 @@ public class FactoryAccount {
                 .build();
     }
 
-    public static Account AccountWithAddress() {
+    public static Account accountWithAddress() {
         return Account.builder().accountName(faker.name().username())
                 .billingStreet(faker.name().username())
                 .billingCity(faker.name().username())

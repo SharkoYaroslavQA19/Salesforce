@@ -31,8 +31,8 @@ public class CreateAccountsTest extends BaseTest {
     @DataProvider
     public Object[][] AccountTestData() {
         return new Object[][]{
-                {FactoryAccount.AccountWithAllData()},
-                {FactoryAccount.AccountWithAddress()},
+                {FactoryAccount.accountWithAllData()},
+                {FactoryAccount.accountWithAddress()},
         };
     }
 }

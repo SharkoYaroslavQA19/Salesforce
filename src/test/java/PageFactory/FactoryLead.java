@@ -7,7 +7,7 @@ import models.Lead;
 public class FactoryLead {
     private static final Faker faker = new Faker();
 
-    public static Lead LeadWithAllData() {
+    public static Lead leadWithAllData() {
         return Lead.builder().lastName(faker.name().lastName())
                 .company(faker.company().name())
                 .leadStatus(LeadStatus.CONTACTED)
@@ -31,7 +31,7 @@ public class FactoryLead {
                 .build();
     }
 
-    public static Lead LeadWithAddress() {
+    public static Lead leadWithAddress() {
         return Lead.builder().lastName(faker.name().lastName())
                 .company(faker.company().name())
                 .leadStatus(LeadStatus.CONTACTED)

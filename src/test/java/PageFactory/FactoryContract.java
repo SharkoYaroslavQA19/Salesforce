@@ -8,7 +8,7 @@ import models.Contact;
 public class FactoryContract {
     private static final Faker faker = new Faker();
 
-    public static Contact ContactWithAllData() {
+    public static Contact contactWithAllData() {
         return Contact.builder().lastName(faker.name().lastName()).accountName("demetrice.tillman")
                 .firstName(faker.name().firstName())
                 .salutation(Salutation.MR)
@@ -38,7 +38,7 @@ public class FactoryContract {
                 .build();
     }
 
-    public static Contact ContactWithAddress() {
+    public static Contact contactWithAddress() {
         return Contact.builder().lastName(faker.name().lastName()).accountName("demetrice.tillman")
                 .firstName(faker.name().firstName())
                 .salutation(Salutation.MR)

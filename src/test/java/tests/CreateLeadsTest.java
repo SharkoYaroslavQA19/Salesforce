@@ -34,8 +34,8 @@ public class CreateLeadsTest extends BaseTest {
     @DataProvider
     public Object[][] leadTestData() {
         return new Object[][]{
-                {FactoryLead.LeadWithAllData()},
-                {FactoryLead.LeadWithAddress()},
+                {FactoryLead.leadWithAllData()},
+                {FactoryLead.leadWithAddress()},
         };
     }
 }

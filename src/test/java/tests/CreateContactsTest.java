@@ -32,8 +32,8 @@ public class CreateContactsTest extends BaseTest {
     @DataProvider
     public Object[][] ContactTestData() {
         return new Object[][]{
-                    {FactoryContract.ContactWithAllData()},
-                    {FactoryContract.ContactWithAddress()},
+                    {FactoryContract.contactWithAllData()},
+                    {FactoryContract.contactWithAddress()},
         };
     }
 }
