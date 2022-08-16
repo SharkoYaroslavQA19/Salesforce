@@ -11,7 +11,7 @@ import Utils.Message;
 public class CreateAccountsTest extends BaseTest {
 
     @Test(groups = {"regression"}, dataProvider = "AccountTestData")
-    public void createAccountTest(Account newAccount)throws InterruptedException{
+    public void createAccountTest(Account newAccount){
         LoginPage.setUserName(USER_NAME);
         LoginPage.setPassword(PASSWORD);
         LoginPage.clickLoginButton();
@@ -26,8 +26,6 @@ public class CreateAccountsTest extends BaseTest {
         Assert.assertEquals(HomePage.getMessageText(), Message.expectedAccountMessageText(newAccount.getAccountName()));
         AccountDetailsPage.getAccountInfo();
         Assert.assertEquals(AccountDetailsPage.getAccountInfo(), newAccount);
-        HomePage.LogOut();
-        Thread.sleep(5000);
     }
 
     @DataProvider

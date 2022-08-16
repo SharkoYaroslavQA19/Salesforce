@@ -5,9 +5,9 @@ import enums.*;
 import models.Lead;
 
 public class FactoryLead {
-    Faker faker = new Faker();
+    private static final Faker faker = new Faker();
 
-    public Lead LeadWithAllData() {
+    public static Lead LeadWithAllData() {
         return Lead.builder().lastName(faker.name().lastName())
                 .company(faker.company().name())
                 .leadStatus(LeadStatus.CONTACTED)
@@ -31,7 +31,7 @@ public class FactoryLead {
                 .build();
     }
 
-    public Lead LeadWithAddress() {
+    public static Lead LeadWithAddress() {
         return Lead.builder().lastName(faker.name().lastName())
                 .company(faker.company().name())
                 .leadStatus(LeadStatus.CONTACTED)

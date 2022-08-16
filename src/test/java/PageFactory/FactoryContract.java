@@ -6,9 +6,9 @@ import enums.Salutation;
 import models.Contact;
 
 public class FactoryContract {
-    Faker faker = new Faker();
+    private static final Faker faker = new Faker();
 
-    public Contact ContactWithAllData() {
+    public static Contact ContactWithAllData() {
         return Contact.builder().lastName(faker.name().lastName()).accountName("demetrice.tillman")
                 .firstName(faker.name().firstName())
                 .salutation(Salutation.MR)
@@ -38,7 +38,7 @@ public class FactoryContract {
                 .build();
     }
 
-    public Contact ContactWithAddress() {
+    public static Contact ContactWithAddress() {
         return Contact.builder().lastName(faker.name().lastName()).accountName("demetrice.tillman")
                 .firstName(faker.name().firstName())
                 .salutation(Salutation.MR)

@@ -11,7 +11,7 @@ public class CreateContactsTest extends BaseTest {
 
 
     @Test(groups = {"regression"}, dataProvider = "ContactTestData")
-    public void createContactTest(Contact newContact)throws InterruptedException{
+    public void createContactTest(Contact newContact){
         LoginPage.setUserName(USER_NAME);
         LoginPage.setPassword(PASSWORD);
         LoginPage.clickLoginButton();
@@ -26,8 +26,7 @@ public class CreateContactsTest extends BaseTest {
         Assert.assertEquals(HomePage.getMessageText(), Message.expectedContactMessageText(newContact.getSalutation().getName(), newContact.getFirstName(), newContact.getLastName()));
         ContactDetailsPage.getContactInfo();
         Assert.assertEquals(ContactDetailsPage.getContactInfo(), newContact);
-        HomePage.LogOut();
-        Thread.sleep(5000);
+
     }
 
     @DataProvider

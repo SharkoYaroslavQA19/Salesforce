@@ -68,9 +68,8 @@ public class BaseTest {
 
     @AfterMethod(alwaysRun = true)
     public void ClearCookies() {
-        driver.manage().deleteAllCookies();
-        ((JavascriptExecutor) driver).executeScript(String.format("window.localStorage.clear();"));
-        ((JavascriptExecutor) driver).executeScript(String.format("window.sessionStorage.clear();"));
+        HomePage.logOut();
+
     }
     @AfterClass(alwaysRun = true)
     public void quitDriver() {

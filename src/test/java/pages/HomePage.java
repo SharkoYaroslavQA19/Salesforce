@@ -57,11 +57,12 @@ public class HomePage extends BasePage {
 
         driver.findElement(LOGOUT_LINK).click();
     }
-    public void LogOut() {
+    public void logOut() {
         log.info("Logout profile");
         waitForElementClickable(PROFILE_BUTTON);
         clickProfileButton();
         clickLogoutLink();
+        waitForPageLoaded();
     }
 
 }
